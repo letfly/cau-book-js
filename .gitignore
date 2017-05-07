@@ -1,5 +1,4 @@
 *.sw[po]
 .DS_Store
-book/static/js/node_modules/
-node_modules
+*node_modules/
 *build/
