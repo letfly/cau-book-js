@@ -12,9 +12,12 @@ async function add(ctx) {
   // 当POST请求的时候，解析POST表单里的数据，并显示出来
   const form = ctx.request.body;
   const name = form['name'];
+  console.log('name'+name);
+  const author = form['author'];
   (async() => {
     const book = await Book.create({
       name: name,
+      author: author,
       date_created: Date.now()
     });
     console.log('created: ' + JSON.stringify(book));

@@ -9,14 +9,9 @@ webpack
 
 ### Back-end
 
-dependencies
-
+You should add user and password about your database in book/settings.js.Then
 ```
 npm install
-```
-
-run
-
-```
+npm run db:upgrade
 npm run app
 ```
