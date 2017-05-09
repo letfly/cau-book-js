@@ -1,8 +1,8 @@
 {
-  "name": "cau-farm",
+  "name": "cau-book",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "manage.js",
   "scripts": {
     "app": "node manage.js",
     "db:init": "sequelize init:migrations",

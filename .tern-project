@@ -1,6 +1,5 @@
 {
-    "libs": [],
-    "plugins": {
-        "node": {}
-    }
+  "plugins": {
+    "node": {}
+  }
 }

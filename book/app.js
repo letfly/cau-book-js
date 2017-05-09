@@ -15,7 +15,6 @@ function create_app() {
   register_blueprints(app);
   return app;
 }
-
 function register_blueprints(app) {
   app.use(router.routes(), router.allowedMethods());
 }
