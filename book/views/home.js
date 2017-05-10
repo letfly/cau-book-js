@@ -5,7 +5,7 @@ const router = new Router();
 
 router.get('/', home);
 async function home(ctx) {
-  await ctx.response.render('home');
+  await ctx.render('home');
 }
 
 router.post('/add', add);
