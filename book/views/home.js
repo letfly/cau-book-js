@@ -19,6 +19,7 @@ async function add(ctx) {
     author: author,
     date_created: Date.now()
   });
+  ctx.body = { status: 'success' };
 }
 
 router.post('/delete/:book_id', delete_);
@@ -26,19 +27,21 @@ async function delete_(ctx) {
   await Book.destroy({
     where: { id: ctx.params.book_id }
   });
+  ctx.body = { status: 'success' };
 }
 
-router.post('/update/:book_id', update);
+router.post('/update/', update);
 async function update(ctx) {
-  var b = await Book.findById(ctx.params.book_id);
   const form = ctx.request.body;
+  var b = await Book.findById(form['id']);
   b.status = form['status'];
   await b.save();
+  ctx.body = { status: 'success' };
 }
 
-router.post('/list', list);
+router.get('/list', list);
 async function list(ctx) {
-  var books = await Book.findAll({order:'date_created DESC'});
+  var books = await Book.findAll({ order: 'date_created DESC' });
   var result = new Array();
   for (let b of books) {
     result.push({
@@ -50,7 +53,7 @@ async function list(ctx) {
     });
   }
   console.log(result);
-  return {status:'success',"books":result};
+  ctx.body = { status: 'success', "books": result };
 }
 
 module.exports = router;
