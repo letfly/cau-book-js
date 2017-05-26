@@ -4,7 +4,7 @@ const statics = require('koa-static');
 const views = require('koa-views');
 const path = require('path');
 
-const router = require('./views/home');
+const router = require('./controllers/home');
 
 function create_app() {
   const app = new Koa();
