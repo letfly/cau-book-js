@@ -1,15 +1,17 @@
 module.exports = {
-    entry : {
-        index : "./index.js"
-    },
-    output : {
-        path : "./build",
-        filename : "bundle.js"
-    },
-    module : {
-        loaders :[
-            {test:/\.js$/, loader:'jsx-loader'}
-        ]
-
-    }
-}
+  // Entry
+  entry: {
+    index: './index.js'
+  },
+  // Output
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  },
+  // Loaders
+  module: {
+    loaders: [{
+      test: /\.js$/, loader: 'jsx-loader'
+    }]
+  }
+};
